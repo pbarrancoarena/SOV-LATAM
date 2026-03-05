@@ -1,0 +1,3 @@
+combination,changepoint_prior_scale,seasonality_prior_scale,holidays_prior_scale,seasonality_mode,growth,interval_width,changepoint_range,MAE,RMSE,MAPE,range,range_proportion,mean_range_proportion,RMSE_TEST,RMSE_TO_STD,best,good,acceptable,fixed
+ACME_SPARKLING_CSD_KB_SB_REFILLABLE,0.03,0.8,0.08,additive,linear,0.95,0.92,1180.2,1580.5,0.075,2400.0,0.14,0.11,1620.8,0.43,True,True,True,True
+GLOBAL_SPARKLING_ENERGY_TB_SB_NONREFILLABLE,0.08,1.5,0.3,additive,linear,0.92,0.88,3080.4,3820.7,0.13,5900.0,0.21,0.18,3900.5,0.65,True,True,True,True

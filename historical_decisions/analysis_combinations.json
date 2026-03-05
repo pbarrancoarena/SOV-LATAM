@@ -1,0 +1,584 @@
+[
+  {
+    "timestamp": "2026-02-25T19:01:05.146355",
+    "country": "Peru",
+    "Bottler": "Arca Continental",
+    "Category": "Energy Drinks",
+    "Sub_Category": "Energy Drinks",
+    "MS_SS": "SS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "precio_noko",
+      "precio_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-02-25T19:03:57.407059",
+    "country": "Peru",
+    "Bottler": "Arca Continental",
+    "Category": "Isotonics",
+    "Sub_Category": "Isotonics",
+    "MS_SS": "SS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "precio_ko",
+      "precio_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-02-25T19:06:05.176392",
+    "country": "Peru",
+    "Bottler": "Arca Continental",
+    "Category": "Water",
+    "Sub_Category": "Flavored Water",
+    "MS_SS": "MS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "precio_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T11:31:48.114703",
+    "country": "Chile",
+    "Bottler": "Andina",
+    "Category": "Water",
+    "Sub_Category": "All",
+    "MS_SS": "All",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T12:09:31.671550",
+    "country": "Chile",
+    "Bottler": "Embonor",
+    "Category": "Water",
+    "Sub_Category": "All",
+    "MS_SS": "All",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T12:14:30.243192",
+    "country": "Chile",
+    "Bottler": "All",
+    "Category": "Isotonics",
+    "Sub_Category": "All",
+    "MS_SS": "All",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T16:28:26.236564",
+    "country": "Chile",
+    "Bottler": "Andina",
+    "Category": "Water",
+    "Sub_Category": "All",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T16:28:36.539107",
+    "country": "Chile",
+    "Bottler": "Embonor",
+    "Category": "Water",
+    "Sub_Category": "All",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T16:37:23.300074",
+    "country": "Chile",
+    "Bottler": "Andina",
+    "Category": "Water",
+    "Sub_Category": "All",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "volumen_noko",
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T18:00:02.688104",
+    "country": "Ecuador",
+    "Bottler": "Arca Continental",
+    "Category": "Flavors",
+    "Sub_Category": "Flavors",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "precio_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T18:02:56.116777",
+    "country": "Ecuador",
+    "Bottler": "Arca Continental",
+    "Category": "Teas",
+    "Sub_Category": "Teas",
+    "MS_SS": "SS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T18:03:12.393300",
+    "country": "Ecuador",
+    "Bottler": "Arca Continental",
+    "Category": "Teas",
+    "Sub_Category": "Teas",
+    "MS_SS": "MS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T18:05:27.599368",
+    "country": "Ecuador",
+    "Bottler": "Arca Continental",
+    "Category": "Water",
+    "Sub_Category": "Flavored Water",
+    "MS_SS": "SS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T18:18:57.984116",
+    "country": "Ecuador",
+    "Bottler": "Arca Continental",
+    "Category": "Water",
+    "Sub_Category": "Flavored Water",
+    "MS_SS": "SS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "precio_ko",
+      "precio_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T20:13:18.669217",
+    "country": "Brazil",
+    "Bottler": "Uberlandia",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "MS",
+    "Refillability": "Refillable",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T20:13:33.817908",
+    "country": "Brazil",
+    "Bottler": "Uberlandia",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T20:16:51.409158",
+    "country": "Brazil",
+    "Bottler": "Andina",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "precio_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T20:18:53.428315",
+    "country": "Brazil",
+    "Bottler": "Bandeirantes",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "precio_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T20:21:00.152294",
+    "country": "Brazil",
+    "Bottler": "Brasal",
+    "Category": "Colas",
+    "Sub_Category": "All",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "precio_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T20:21:39.330217",
+    "country": "Brazil",
+    "Bottler": "FEMSA",
+    "Category": "Colas",
+    "Sub_Category": "All",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "precio_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:28:54.257281",
+    "country": "Brazil",
+    "Bottler": "All",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "SS",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:34:47.927948",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Andina",
+    "Category": "Water",
+    "Sub_Category": "Plain Water",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:34:57.760899",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Andina",
+    "Category": "Water",
+    "Sub_Category": "Plain Water",
+    "MS_SS": "SS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:35:26.795160",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Andina",
+    "Category": "Isotonics",
+    "Sub_Category": "Isotonics",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:38:13.068644",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Embonor",
+    "Category": "Isotonics",
+    "Sub_Category": "Isotonics",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:39:17.678213",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Embonor",
+    "Category": "Juices",
+    "Sub_Category": "Juice Drinks",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:40:03.551815",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Embonor",
+    "Category": "Water",
+    "Sub_Category": "Flavored Water",
+    "MS_SS": "SS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko",
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:40:21.782464",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Embonor",
+    "Category": "Water",
+    "Sub_Category": "Flavored Water",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:41:02.659802",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Embonor",
+    "Category": "Water",
+    "Sub_Category": "Plain Water",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko",
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T10:41:07.511489",
+    "country": "Chile_wo_Blues",
+    "Bottler": "Embonor",
+    "Category": "Water",
+    "Sub_Category": "Plain Water",
+    "MS_SS": "SS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko",
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:43:30.956855",
+    "country": "Brazil",
+    "Bottler": "All",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "All",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:47:06.457054",
+    "country": "Brazil",
+    "Bottler": "Andina",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:47:17.263879",
+    "country": "Brazil",
+    "Bottler": "FEMSA",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:47:23.288333",
+    "country": "Brazil",
+    "Bottler": "Solar",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "All",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:50:38.675509",
+    "country": "Brazil",
+    "Bottler": "All",
+    "Category": "Flavors",
+    "Sub_Category": "Flavors",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:50:56.636079",
+    "country": "Brazil",
+    "Bottler": "Andina",
+    "Category": "Flavors",
+    "Sub_Category": "Flavors",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:51:07.516193",
+    "country": "Brazil",
+    "Bottler": "FEMSA",
+    "Category": "Flavors",
+    "Sub_Category": "Flavors",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:51:15.376140",
+    "country": "Brazil",
+    "Bottler": "Solar",
+    "Category": "Flavors",
+    "Sub_Category": "Flavors",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:54:40.249850",
+    "country": "Brazil",
+    "Bottler": "FEMSA",
+    "Category": "Water",
+    "Sub_Category": "Plain Water",
+    "MS_SS": "SS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:55:20.899569",
+    "country": "Brazil",
+    "Bottler": "Andina",
+    "Category": "Water",
+    "Sub_Category": "Plain Water",
+    "MS_SS": "SS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T12:55:55.992772",
+    "country": "Argentina",
+    "Bottler": "Andina",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "SS",
+    "Refillability": "All",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T12:56:55.048162",
+    "country": "Argentina",
+    "Bottler": "Andina",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T12:57:01.535577",
+    "country": "Argentina",
+    "Bottler": "Andina",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "MS",
+    "Refillability": "Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T12:57:54.024208",
+    "country": "Argentina",
+    "Bottler": "Arca",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T12:58:02.866556",
+    "country": "Argentina",
+    "Bottler": "Arca",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "MS",
+    "Refillability": "Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T12:58:16.612592",
+    "country": "Argentina",
+    "Bottler": "Arca",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T12:58:41.066995",
+    "country": "Argentina",
+    "Bottler": "Arca",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "SS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  }
+]

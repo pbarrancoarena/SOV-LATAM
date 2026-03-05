@@ -1,0 +1,11 @@
+combination,changepoint_prior_scale,seasonality_prior_scale,holidays_prior_scale,seasonality_mode,growth,interval_width,changepoint_range,MAE,RMSE,MAPE,range,range_proportion,mean_range_proportion,RMSE_TEST,RMSE_TO_STD,best,good,acceptable,fixed
+ACME_SPARKLING_CSD_KB_SB_REFILLABLE,0.05,1.0,0.1,additive,linear,0.95,0.9,1250.5,1680.3,0.08,2500.0,0.15,0.12,1720.4,0.45,True,True,True,False
+ACME_SPARKLING_CSD_KB_SB_REFILLABLE,0.1,2.0,0.5,multiplicative,linear,0.90,0.85,1380.2,1850.7,0.09,2800.0,0.18,0.15,1890.1,0.52,False,True,True,False
+ACME_SPARKLING_CSD_TB_MB_NONREFILLABLE,0.03,0.5,0.05,additive,linear,0.95,0.95,890.3,1150.8,0.06,1800.0,0.12,0.10,1180.5,0.38,True,True,True,False
+GLOBAL_STILL_JUICE_KB_LB_NONREFILLABLE,0.08,1.5,0.2,additive,linear,0.90,0.88,2100.4,2850.6,0.11,4200.0,0.20,0.17,2920.3,0.58,False,True,True,False
+GLOBAL_STILL_JUICE_KB_LB_NONREFILLABLE,0.05,1.0,0.15,additive,linear,0.95,0.92,1980.7,2650.2,0.10,3900.0,0.18,0.15,2700.8,0.54,True,True,True,False
+GLOBAL_SPARKLING_ENERGY_TB_SB_NONREFILLABLE,0.15,3.0,1.0,multiplicative,linear,0.85,0.80,3450.8,4280.9,0.15,6500.0,0.25,0.22,4350.2,0.72,False,False,True,False
+GLOBAL_SPARKLING_ENERGY_TB_SB_NONREFILLABLE,0.10,2.0,0.5,multiplicative,linear,0.90,0.85,3220.5,3980.4,0.14,6200.0,0.23,0.20,4050.7,0.68,True,True,True,False
+REGIONAL_STILL_WATER_KB_MB_REFILLABLE,0.02,0.3,0.02,additive,linear,0.95,0.99,650.2,820.5,0.04,1200.0,0.08,0.07,840.3,0.25,True,True,True,False
+REGIONAL_SPARKLING_CSD_TB_SB_REFILLABLE,0.06,1.2,0.15,additive,linear,0.92,0.90,1450.8,1920.3,0.09,2900.0,0.16,0.13,1960.5,0.48,True,True,True,False
+PREMIUM_SPARKLING_CSD_KB_LB_NONREFILLABLE,0.04,0.8,0.1,additive,linear,0.95,0.93,1120.5,1480.7,0.07,2100.0,0.14,0.11,1520.2,0.42,True,True,True,False

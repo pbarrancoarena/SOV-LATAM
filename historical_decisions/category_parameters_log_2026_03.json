@@ -1,0 +1,88 @@
+[
+  {
+    "timestamp": "2026-03-03T17:06:31.604072",
+    "year": 2026,
+    "month": 3,
+    "country": "Chile",
+    "reconciliation": true,
+    "undo_qa": false,
+    "keep_comb_forecast": true,
+    "undo_qa_categories": [],
+    "keep_comb_forecast_categories": [
+      "Colas",
+      "Energy Drinks",
+      "Isotonics",
+      "Water"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T17:51:29.793212",
+    "year": 2026,
+    "month": 3,
+    "country": "Guatemala",
+    "reconciliation": true,
+    "undo_qa": false,
+    "keep_comb_forecast": false,
+    "undo_qa_categories": [],
+    "keep_comb_forecast_categories": []
+  },
+  {
+    "timestamp": "2026-03-03T19:56:34.002423",
+    "year": 2026,
+    "month": 3,
+    "country": "Ecuador",
+    "reconciliation": true,
+    "undo_qa": false,
+    "keep_comb_forecast": true,
+    "undo_qa_categories": [],
+    "keep_comb_forecast_categories": [
+      "Colas",
+      "Teas",
+      "Water"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T20:02:04.320974",
+    "year": 2026,
+    "month": 3,
+    "country": "Chile",
+    "reconciliation": true,
+    "undo_qa": false,
+    "keep_comb_forecast": true,
+    "undo_qa_categories": [],
+    "keep_comb_forecast_categories": [
+      "Colas",
+      "Isotonics",
+      "Water"
+    ]
+  },
+  {
+    "timestamp": "2026-03-03T21:07:03.139970",
+    "year": 2026,
+    "month": 3,
+    "country": "Brazil",
+    "reconciliation": true,
+    "undo_qa": false,
+    "keep_comb_forecast": true,
+    "undo_qa_categories": [],
+    "keep_comb_forecast_categories": [
+      "Teas",
+      "Water"
+    ]
+  },
+  {
+    "timestamp": "2026-03-04T11:26:11.685827",
+    "year": 2026,
+    "month": 3,
+    "country": "Chile_wo_Blues",
+    "reconciliation": true,
+    "undo_qa": false,
+    "keep_comb_forecast": true,
+    "undo_qa_categories": [],
+    "keep_comb_forecast_categories": [
+      "Colas",
+      "Isotonics",
+      "Water"
+    ]
+  }
+]
