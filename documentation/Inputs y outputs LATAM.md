@@ -34,7 +34,7 @@ graph TB
   
     %% Etapa 3: Validación
     subgraph STAGE3[<b>ETAPA 3: VALIDACIÓN Y CONSOLIDACIÓN</b>]
-        QA_PROCESS[<b>PROCESO QA</b><br/>nb_sdc_baseline_forecast<br/>_LATAM_VecQA<br/><br/>]
+        QA_PROCESS[<b>PROCESO QA</b><br/>nb_sdc_baseline_forecast<br/>_LATAM_VecQA<br/>o vecqa_to_post_qa.py<br/><br/>]
         OUTPUT_QA[/<b>CSV OUTPUT</b><br/>Country_forecast_baseline<br/>_post_qa.csv\]
         FINAL[[<b>RESULTADO FINAL</b><br/><br/>Resultados_LATAM<br/>mes_timestamp.xlsx<br/><br/>]]
     end
@@ -112,9 +112,10 @@ Se ejecutan dos procesos paralelos con los mismos inputs (Nielsen + Params):
 #### 3.1. Validación QA (por país)
 
 - **Input**: Ambos archivos de forecast (categoría + combinación)
-- **Proceso**: `nb_sdc_baseline_forecast_LATAM_VecQA`
+- **Proceso**: `nb_sdc_baseline_forecast_LATAM_VecQA` (notebook) o `scripts/vecqa_to_post_qa.py` (script CLI)
 - **Output**: `{Country}_forecast_baseline_post_qa.csv`
 - Valida y reconcilia los pronósticos de ambas metodologías
+- El script CLI permite automatizar este proceso sin necesidad de ejecutar el notebook manualmente
 
 #### 3.2. Consolidación Regional
 

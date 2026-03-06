@@ -85,7 +85,7 @@ python scripts/merge_params.py Example
 
 Ver [data/examples/README.md](data/examples/README.md) para más detalles.
 
-## Script Principal
+## Scripts Principales
 
 ### `scripts/merge_params.py`
 
@@ -109,6 +109,50 @@ Comportamiento:
 - Modo default: mantiene duplicados de baseline y solo reemplaza combinaciones presentes en `Params_fix`.
 - Modo `--deduplicate`: conserva una sola fila por combinacion (la mejor) y luego aplica reemplazos de `Params_fix`.
 - Marca `fixed=True` para parametros que vienen de `Params_fix`.
+
+### `scripts/vecqa_to_post_qa.py`
+
+Aplica el pipeline de Vector QA para reconstruir series temporales a nivel categoria y desagregar entre combinaciones. Toma los archivos de forecast baseline y genera el archivo post-QA.
+
+Uso:
+
+```bash
+python scripts/vecqa_to_post_qa.py --country <country> [OPTIONS]
+```
+
+Ejemplos:
+
+```bash
+# Uso basico (con reconciliacion por defecto)
+python scripts/vecqa_to_post_qa.py --country Guatemala
+
+# Sin reconciliacion
+python scripts/vecqa_to_post_qa.py --country Peru --no-reconciliation
+
+# Con undo QA para categorias especificas
+python scripts/vecqa_to_post_qa.py --country Chile --undo-qa --undo-qa-categories "Water,Juices"
+
+# Mantener forecast original para ciertas categorias
+python scripts/vecqa_to_post_qa.py --country Brazil --keep-comb-forecast --keep-comb-forecast-categories "Juices"
+```
+
+Opciones:
+
+- `--country`: (Requerido) Nombre del pais
+- `--data-dir`: Directorio con archivos CSV de entrada (default: `data/`)
+- `--output-file`: Ruta del archivo de salida (default: `data/{country}_forecast_baseline_post_qa.csv`)
+- `--no-reconciliation`: Deshabilita reconciliacion optima de forecast
+- `--undo-qa`: Deshace QA para categorias seleccionadas
+- `--undo-qa-categories`: Categorias separadas por comas para undo QA
+- `--keep-comb-forecast`: Mantiene forecast original a nivel combinacion
+- `--keep-comb-forecast-categories`: Categorias separadas por comas para mantener forecast
+
+Entradas:
+- `{country}_forecast_baseline_intervalo_conf.csv`
+- `{country}_forecast_baseline_category.csv`
+
+Salida:
+- `{country}_forecast_baseline_post_qa.csv`
 
 ## Aplicaciones Streamlit
 

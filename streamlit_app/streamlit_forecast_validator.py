@@ -333,8 +333,14 @@ def train_prophet_model(df_prophet, params, random_seed=None, outlier_holidays=N
         st.error(f"❌ Error: {error_msg}")
         return None
 
-def make_forecast(m, periods=12):
-    """Genera pronóstico"""
+def make_forecast(m, periods=12, include_intervals=True):
+    """Genera pronóstico
+    
+    Args:
+        m: Modelo Prophet entrenado
+        periods: Número de períodos a pronosticar
+        include_intervals: Si True, incluye yhat_lower y yhat_upper
+    """
     if m is None:
         return None
     
@@ -343,7 +349,11 @@ def make_forecast(m, periods=12):
             warnings.simplefilter('ignore')
             future = m.make_future_dataframe(periods=periods, freq='MS')
             forecast = m.predict(future)
-        return forecast[['ds', 'yhat']]
+        
+        if include_intervals:
+            return forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
+        else:
+            return forecast[['ds', 'yhat']]
     except Exception as e:
         return None
 
@@ -765,6 +775,153 @@ def save_parameters_to_fix(country, variable_base, combo_key, slider_params, exp
     
     df_params.to_csv(filepath, index=False)
     return filepath, len(combos_to_update)
+
+def update_forecast_baseline(country, variable_base, df_combination, slider_params, 
+                             bottler, category, sub_category, ms_ss, refillability,
+                             random_seed=None, outlier_holidays=None, expanded_combos=None):
+    """Actualiza el archivo de forecast baseline con nuevos pronósticos.
+    
+    Args:
+        country: País
+        variable_base: Variable base (ej: 'volume_uc_KO', 'price_lc_NOKO')
+        df_combination: DataFrame con los datos filtrados para la combinación
+        slider_params: Parámetros ajustados del modelo
+        bottler, category, sub_category, ms_ss, refillability: Filtros de combinación
+        random_seed: Seed para reproducibilidad
+        outlier_holidays: Lista de fechas outliers
+        expanded_combos: Lista de combinaciones específicas (si hay 'All')
+    
+    Returns:
+        filepath: Ruta del archivo actualizado
+        num_rows_updated: Número de filas actualizadas
+    """
+    # Archivo de forecast baseline
+    forecast_file = DATA_PATH / f"{country}_forecast_baseline_intervalo_conf.csv"
+    
+    if not forecast_file.exists():
+        raise FileNotFoundError(f"No se encontró el archivo: {forecast_file}")
+    
+    # Cargar archivo de forecast
+    df_forecast = pd.read_csv(forecast_file)
+    df_forecast['Date'] = pd.to_datetime(df_forecast['Date'], errors='coerce')
+    if 'ds' not in df_forecast.columns:
+        raise ValueError("Columna 'ds' no encontrada en el archivo de forecast")
+    df_forecast['ds'] = pd.to_datetime(df_forecast['ds'], errors='coerce')
+    
+    # Columnas a actualizar según variable_base
+    forecast_col = f"{variable_base}_FORECAST"
+    lower_col = f"{variable_base}_lower"
+    upper_col = f"{variable_base}_upper"
+    
+    # Verificar que las columnas existen
+    if forecast_col not in df_forecast.columns:
+        raise ValueError(f"Columna {forecast_col} no encontrada en el archivo de forecast")
+    
+    # Obtener variable actual correspondiente
+    variable_actual = None
+    for key, val in VARIABLE_BASE_MAPPING.items():
+        if val == variable_base:
+            variable_actual = VARIABLE_MAPPING[key]
+            break
+    
+    if variable_actual is None:
+        raise ValueError(f"No se encontró variable_actual para {variable_base}")
+    
+    # Determinar qué combinaciones actualizar
+    combos_to_process = []
+    if expanded_combos and len(expanded_combos) > 0:
+        # Hay 'All' - procesar cada combinación específica
+        combos_to_process = expanded_combos
+    else:
+        # Combinación específica única
+        combos_to_process = [{
+            'Bottler': bottler,
+            'Category': category,
+            'Sub_Category': sub_category,
+            'MS_SS': ms_ss,
+            'Refillability': refillability
+        }]
+    
+    total_rows_updated = 0
+    
+    # Procesar cada combinación
+    for combo_dict in combos_to_process:
+        # Filtrar datos históricos para esta combinación específica
+        df_combo_specific = get_data_for_combination(
+            df_combination,
+            combo_dict.get('Bottler', bottler),
+            combo_dict.get('Category', category),
+            combo_dict.get('Sub_Category', sub_category),
+            combo_dict.get('MS_SS', ms_ss),
+            combo_dict.get('Refillability', refillability)
+        )
+        
+        if df_combo_specific.empty:
+            continue
+        
+        # Preparar datos para Prophet
+        df_prophet = prepare_prophet_data(df_combo_specific, variable_actual)
+        
+        if len(df_prophet) < 3:
+            continue
+        
+        # Entrenar modelo con nuevos parámetros
+        m_new = train_prophet_model(df_prophet, slider_params, 
+                                    random_seed=random_seed, 
+                                    outlier_holidays=outlier_holidays)
+        
+        if m_new is None:
+            continue
+        
+        # Generar pronóstico con intervalos de confianza
+        forecast_new = make_forecast(m_new, periods=12, include_intervals=True)
+        
+        if forecast_new is None:
+            continue
+        
+        # Verificar que las columnas de intervalos existen
+        required_cols = ['ds', 'yhat', 'yhat_lower', 'yhat_upper']
+        if not all(col in forecast_new.columns for col in required_cols):
+            # Si no hay intervalos, saltear esta combinación
+            continue
+        
+        # Crear máscara para identificar filas a actualizar en df_forecast
+        mask = pd.Series([True] * len(df_forecast), index=df_forecast.index)
+        mask &= (df_forecast['Bottler'] == combo_dict.get('Bottler', bottler))
+        mask &= (df_forecast['Category'] == combo_dict.get('Category', category))
+        mask &= (df_forecast['Sub_Category'] == combo_dict.get('Sub_Category', sub_category))
+        mask &= (df_forecast['MS_SS'] == combo_dict.get('MS_SS', ms_ss))
+        mask &= (df_forecast['Refillability'] == combo_dict.get('Refillability', refillability))
+        
+        # Actualizar pronósticos para fechas futuras.
+        # En los archivos baseline suele venir como 'Forecasted' y en ocasiones como 'Forecast'.
+        type_norm = df_forecast['Type'].fillna('').astype(str).str.strip().str.lower()
+        mask_forecast = mask & type_norm.isin(['forecasted', 'forecast'])
+        
+        # Merge forecast con df_forecast usando fecha clave.
+        # Para filas forecasted, 'Date' suele venir vacío y la fecha real está en 'ds'.
+        forecast_new_renamed = forecast_new[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].copy()
+        forecast_new_renamed.columns = ['match_date', 'new_forecast', 'new_lower', 'new_upper']
+        forecast_new_renamed['match_date'] = pd.to_datetime(forecast_new_renamed['match_date'], errors='coerce')
+
+        # Preferir Date; si está vacío, usar ds.
+        df_forecast['match_date'] = df_forecast['Date'].where(df_forecast['Date'].notna(), df_forecast['ds'])
+        
+        # Actualizar valores
+        for idx in df_forecast[mask_forecast].index:
+            date_val = df_forecast.loc[idx, 'match_date']
+            forecast_row = forecast_new_renamed[forecast_new_renamed['match_date'] == date_val]
+            
+            if not forecast_row.empty:
+                df_forecast.loc[idx, forecast_col] = forecast_row['new_forecast'].values[0]
+                df_forecast.loc[idx, lower_col] = forecast_row['new_lower'].values[0]
+                df_forecast.loc[idx, upper_col] = forecast_row['new_upper'].values[0]
+                total_rows_updated += 1
+    
+    # Guardar archivo actualizado
+    df_forecast.to_csv(forecast_file, index=False)
+    
+    return forecast_file, total_rows_updated
 
 # ============================================================================
 # STREAMLIT APP
@@ -1353,27 +1510,63 @@ for tab_idx, (tab, variable_display) in enumerate(zip(tabs, variables_to_train))
         if has_all and expanded_combos:
             st.warning(f"⚠️ Esta combinación contiene 'All'. Los parámetros se aplicarán a las {len(expanded_combos)} combinaciones específicas detectadas.")
         
-        if st.button(
-            "Guardar en Params_fix",
-            help="Guardar estos parámetros en la carpeta Params_fix",
-            width='stretch',
-            type="primary",
-            key=f"save_params_{variable_base}"
-        ):
-            try:
-                filepath, num_combos = save_parameters_to_fix(
-                    country, 
-                    variable_base, 
-                    combo_key, 
-                    slider_params,
-                    expanded_combos=expanded_combos if (has_all and expanded_combos) else None
-                )
-                st.success(f"✅ Parámetros guardados en:\n`{filepath}`")
-                st.info(f"📊 Total de combinaciones actualizadas: **{num_combos}**")
-                if has_all and expanded_combos:
-                    st.info("💡 Los hiperparámetros se han aplicado a todas las combinaciones específicas subyacentes")
-            except Exception as e:
-                st.error(f"❌ Error al guardar: {str(e)}")
+        col_save1, col_save2 = st.columns(2)
+        
+        with col_save1:
+            if st.button(
+                "💾 Guardar Params",
+                help="Guardar estos parámetros en la carpeta Params_fix",
+                use_container_width=True,
+                type="primary",
+                key=f"save_params_{variable_base}"
+            ):
+                try:
+                    filepath, num_combos = save_parameters_to_fix(
+                        country, 
+                        variable_base, 
+                        combo_key, 
+                        slider_params,
+                        expanded_combos=expanded_combos if (has_all and expanded_combos) else None
+                    )
+                    st.success(f"✅ Parámetros guardados en:\n`{filepath}`")
+                    st.info(f"📊 Total de combinaciones actualizadas: **{num_combos}**")
+                    if has_all and expanded_combos:
+                        st.info("💡 Los hiperparámetros se han aplicado a todas las combinaciones específicas subyacentes")
+                except Exception as e:
+                    st.error(f"❌ Error al guardar: {str(e)}")
+        
+        with col_save2:
+            if st.button(
+                "📊 Actualizar Forecast",
+                help="Actualizar el archivo de forecast baseline con los nuevos pronósticos",
+                use_container_width=True,
+                type="secondary",
+                key=f"update_forecast_{variable_base}"
+            ):
+                try:
+                    with st.spinner(f"Actualizando forecast para {variable_base}..."):
+                        filepath_forecast, num_rows = update_forecast_baseline(
+                            country=country,
+                            variable_base=variable_base,
+                            df_combination=df_combination,
+                            slider_params=slider_params,
+                            bottler=bottler,
+                            category=category,
+                            sub_category=sub_category,
+                            ms_ss=ms_ss,
+                            refillability=refillability,
+                            random_seed=random_seed,
+                            outlier_holidays=outlier_holidays,
+                            expanded_combos=expanded_combos if (has_all and expanded_combos) else None
+                        )
+                    st.success(f"✅ Forecast actualizado en:\n`{filepath_forecast}`")
+                    st.info(f"📊 Total de filas actualizadas: **{num_rows}**")
+                    if has_all and expanded_combos:
+                        st.info("💡 Los pronósticos se han actualizado para todas las combinaciones específicas subyacentes")
+                except FileNotFoundError as e:
+                    st.error(f"❌ Archivo no encontrado: {str(e)}")
+                except Exception as e:
+                    st.error(f"❌ Error al actualizar forecast: {str(e)}")
 
 st.markdown("---")
 st.caption("Aplicación generada automáticamente para validar pronósticos de Prophet")

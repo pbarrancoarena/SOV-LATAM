@@ -493,92 +493,200 @@
     ]
   },
   {
-    "timestamp": "2026-03-05T12:55:55.992772",
+    "timestamp": "2026-03-05T16:47:44.304050",
     "country": "Argentina",
     "Bottler": "Andina",
     "Category": "Colas",
     "Sub_Category": "Colas Light",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:48:32.863391",
+    "country": "Argentina",
+    "Bottler": "Arca",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:49:30.328017",
+    "country": "Argentina",
+    "Bottler": "FEMSA",
+    "Category": "Colas",
+    "Sub_Category": "Colas Light",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:51:06.024977",
+    "country": "Argentina",
+    "Bottler": "Andina",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:51:32.233117",
+    "country": "Argentina",
+    "Bottler": "Andina",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
     "MS_SS": "SS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko",
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:52:14.196689",
+    "country": "Argentina",
+    "Bottler": "Arca",
+    "Category": "Colas",
+    "Sub_Category": "Colas Regular",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:56:10.360476",
+    "country": "Argentina",
+    "Bottler": "Andina",
+    "Category": "Flavors",
+    "Sub_Category": "Flavors",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:56:55.123386",
+    "country": "Argentina",
+    "Bottler": "FEMSA",
+    "Category": "Flavors",
+    "Sub_Category": "Flavors",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:57:19.079097",
+    "country": "Argentina",
+    "Bottler": "Reginald Lee",
+    "Category": "Flavors",
+    "Sub_Category": "Flavors",
+    "MS_SS": "MS",
+    "Refillability": "Non Refillable",
+    "variables_to_analyze": [
+      "volumen_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:59:06.010983",
+    "country": "Argentina",
+    "Bottler": "FEMSA",
+    "Category": "Juices",
+    "Sub_Category": "Juice Drinks",
+    "MS_SS": "MS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T16:59:42.242903",
+    "country": "Argentina",
+    "Bottler": "Andina",
+    "Category": "Juices",
+    "Sub_Category": "Juice Drinks",
+    "MS_SS": "MS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "volumen_ko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T17:01:35.208020",
+    "country": "Argentina",
+    "Bottler": "All",
+    "Category": "Water",
+    "Sub_Category": "Flavored Water",
+    "MS_SS": "MS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "precio_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T17:01:50.779264",
+    "country": "Argentina",
+    "Bottler": "All",
+    "Category": "Water",
+    "Sub_Category": "Plain Water",
+    "MS_SS": "SS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "precio_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T17:01:56.983514",
+    "country": "Argentina",
+    "Bottler": "All",
+    "Category": "Water",
+    "Sub_Category": "Plain Water",
+    "MS_SS": "MS",
+    "Refillability": "Others",
+    "variables_to_analyze": [
+      "precio_noko"
+    ]
+  },
+  {
+    "timestamp": "2026-03-05T21:33:18.861525",
+    "country": "Argentina",
+    "Bottler": "All",
+    "Category": "Colas",
+    "Sub_Category": "All",
+    "MS_SS": "All",
     "Refillability": "All",
     "variables_to_analyze": [
-      "volumen_ko"
+      "volumen_ko",
+      "volumen_noko"
     ]
   },
   {
-    "timestamp": "2026-03-05T12:56:55.048162",
-    "country": "Argentina",
-    "Bottler": "Andina",
+    "timestamp": "2026-03-06T11:40:31.898624",
+    "country": "Chile_wo_Blues",
+    "Bottler": "All",
     "Category": "Colas",
-    "Sub_Category": "Colas Light",
+    "Sub_Category": "Colas Regular",
     "MS_SS": "MS",
     "Refillability": "Non Refillable",
     "variables_to_analyze": [
       "volumen_ko",
       "volumen_noko"
-    ]
-  },
-  {
-    "timestamp": "2026-03-05T12:57:01.535577",
-    "country": "Argentina",
-    "Bottler": "Andina",
-    "Category": "Colas",
-    "Sub_Category": "Colas Light",
-    "MS_SS": "MS",
-    "Refillability": "Refillable",
-    "variables_to_analyze": [
-      "volumen_ko",
-      "volumen_noko"
-    ]
-  },
-  {
-    "timestamp": "2026-03-05T12:57:54.024208",
-    "country": "Argentina",
-    "Bottler": "Arca",
-    "Category": "Colas",
-    "Sub_Category": "Colas Light",
-    "MS_SS": "MS",
-    "Refillability": "Non Refillable",
-    "variables_to_analyze": [
-      "volumen_ko",
-      "volumen_noko"
-    ]
-  },
-  {
-    "timestamp": "2026-03-05T12:58:02.866556",
-    "country": "Argentina",
-    "Bottler": "Arca",
-    "Category": "Colas",
-    "Sub_Category": "Colas Light",
-    "MS_SS": "MS",
-    "Refillability": "Refillable",
-    "variables_to_analyze": [
-      "volumen_ko",
-      "volumen_noko"
-    ]
-  },
-  {
-    "timestamp": "2026-03-05T12:58:16.612592",
-    "country": "Argentina",
-    "Bottler": "Arca",
-    "Category": "Colas",
-    "Sub_Category": "Colas Light",
-    "MS_SS": "MS",
-    "Refillability": "Non Refillable",
-    "variables_to_analyze": [
-      "volumen_ko",
-      "volumen_noko"
-    ]
-  },
-  {
-    "timestamp": "2026-03-05T12:58:41.066995",
-    "country": "Argentina",
-    "Bottler": "Arca",
-    "Category": "Colas",
-    "Sub_Category": "Colas Light",
-    "MS_SS": "SS",
-    "Refillability": "Non Refillable",
-    "variables_to_analyze": [
-      "volumen_ko"
     ]
   }
 ]

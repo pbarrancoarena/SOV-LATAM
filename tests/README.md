@@ -7,6 +7,7 @@ Este directorio contiene tests unitarios y de integración para el sistema de fo
 ```
 tests/
 ├── test_merge_params.py      # Tests para script de merge
+├── test_vecqa_to_post_qa.py  # Tests para script Vector QA
 ├── test_utils.py              # Tests para utilidades de Streamlit
 ├── fixtures/                  # Datos de prueba
 │   └── sample_params.csv

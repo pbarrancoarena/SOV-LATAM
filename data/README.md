@@ -37,9 +37,15 @@ Variables:
 Los archivos `.csv` con datos de forecast estan en `.gitignore` por contener informacion sensible.
 
 Patrones de archivos:
-- `<Country>_forecast_baseline_category.csv`
-- `<Country>_forecast_baseline_intervalo_conf.csv`
-- `<Country>_forecast_baseline_post_qa.csv`
+
+- `<Country>_forecast_baseline_intervalo_conf.csv`  
+  Baseline forecast a nivel combinacion con intervalos de confianza (entrada para QA)
+  
+- `<Country>_forecast_baseline_category.csv`  
+  Baseline forecast agregado a nivel categoria (entrada para QA)
+  
+- `<Country>_forecast_baseline_post_qa.csv`  
+  Forecast final despues de aplicar Vector QA (salida del pipeline)
 
 ## Workflow
 
@@ -49,7 +55,9 @@ Patrones de archivos:
 3. Tuning Manual → Params_fix/
 4. Consolidacion → python scripts/merge_params.py <country>
 5. Output → Params_new/
-6. Forecasting → Usa Params_new/
+6. Forecasting → Genera archivos *_intervalo_conf.csv y *_category.csv
+7. Vector QA → python scripts/vecqa_to_post_qa.py --country <country>
+8. Output Final → <Country>_forecast_baseline_post_qa.csv
 ```
 
 ## Estructura de Combinaciones
